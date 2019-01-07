@@ -11,8 +11,6 @@ until (player.AIPlayer == 0) }
 image_xscale = 0.65;
 image_yscale = 0.65;
 image_angle = point_direction(x, y, mouse_x, mouse_y) - 90;
-x = (player.x + mouse_x) / 2;
-y = (player.y + mouse_y) / 2;
-
-if (sqrt((x - 
+x = player.x + 15 * cos(degtorad(point_direction(player.x, player.y, mouse_x, mouse_y)));
+y = player.y - 15 * sin(degtorad(point_direction(player.x, player.y, mouse_x, mouse_y)));
 

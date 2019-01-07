@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "0bac9b35-eed6-4828-8f21-8c47940e820a",
+            "Value": {
+                "id": "40fd20bb-568f-4c93-a113-de94ca4510e3",
+                "resourcePath": "sprites\\Spr_AbilitySlam\\Spr_AbilitySlam.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0ce40a2f-9a61-4fc9-97c1-afee976bd79a",
             "Value": {
                 "id": "606c8895-dd5a-4ee7-999b-d306a50eaaaf",
@@ -311,10 +319,26 @@
             }
         },
         {
+            "Key": "e623da68-1eda-460d-b176-d9d1815341a4",
+            "Value": {
+                "id": "b5ff045f-7bb5-4a3f-b87a-7aca4393a5f9",
+                "resourcePath": "scripts\\scr_ability_slam\\scr_ability_slam.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f550237d-3300-49bc-b7c3-157c559b0c01",
             "Value": {
                 "id": "273d4162-ab9a-46e1-937c-2051d3315ca9",
                 "resourcePath": "objects\\Obj_Platform\\Obj_Platform.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f9f329fb-6447-477d-adf8-ba37914f3b24",
+            "Value": {
+                "id": "ba97a9dd-022c-41fa-bdbb-e44d6898023f",
+                "resourcePath": "objects\\Obj_Ability\\Obj_Ability.yy",
                 "resourceType": "GMObject"
             }
         }
@@ -322,7 +346,8 @@
     "script_order": [
         "4b9005da-791b-4983-8f44-9200d48caa81",
         "3c9af762-9d21-4bae-85a0-028ff717d657",
-        "0ce40a2f-9a61-4fc9-97c1-afee976bd79a"
+        "0ce40a2f-9a61-4fc9-97c1-afee976bd79a",
+        "e623da68-1eda-460d-b176-d9d1815341a4"
     ],
     "tutorial": ""
 }

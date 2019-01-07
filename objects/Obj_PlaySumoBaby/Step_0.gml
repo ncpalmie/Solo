@@ -6,6 +6,9 @@ if self.numJumps < 3 {
 
 event_inherited();
 
+//Abilities
+scr_ability_slam();
+
 //Animation
 if hspd == 0 and vspd == 0 {
 	image_speed = 2.5;
@@ -36,15 +39,36 @@ else {
 		}
 		//Lean in jump
 		if (image_xscale > 0 && !self.collideBottom) {
-				self.spriteAngle = 360 + (7.5 * self.hspd * -1);
+				self.spriteAngle = 360 + (1.6 * self.hspd * -1);
 			} else {
-				self.spriteAngle = 7.5 * -1 * self.hspd;
+				self.spriteAngle = 1.6 * -1 * self.hspd;
 		}
 	}
 }
+
+if (self.currentAbility = "slam") {
+	if (self.hspd == 0) {
+		self.spriteAngle = 270;	
+		if (self.vspd < 0) {
+			image_xscale = 1;	
+			self.spriteAngle = 90;
+		}
+	}
+	else if (self.hspd > 0) {
+		image_xscale = 1;
+		self.spriteAngle = 270;
+	} else {
+		image_xscale = -1;
+		self.spriteAngle = 90;	
+	}
+}
+
 //Reset to default
 if (self.collideBottom or self.collideRight or self.collideLeft) {
-	self.spriteAngle = 0;	
+	self.spriteAngle = 0;
+	if (self.currentAbility == "slam") {
+		self.currentAbility = noone;
+	}
 }
 
 if (image_index >= self.maxFrame) or (image_index <= self.minFrame) {

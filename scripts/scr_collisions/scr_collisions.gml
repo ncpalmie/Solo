@@ -1,16 +1,19 @@
+//Using collision method made from multiple forum community members at 
+//https://forum.yoyogames.com/index.php?threads/pixel-perfect-object-based-collision.30739/
+
 var sprite_bbox_top = sprite_get_bbox_top(sprite_index) - sprite_get_yoffset(sprite_index);
 var sprite_bbox_bottom = sprite_get_bbox_bottom(sprite_index) - sprite_get_yoffset(sprite_index);
 var sprite_bbox_right = sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index);
 var sprite_bbox_left = sprite_get_bbox_left(sprite_index) - sprite_get_xoffset(sprite_index);
 
 //Horizontal collisions
-x += self.hspd;
+x += self.hspd * (delta_time / 100000);
 
 //Snap
 if place_meeting(x + sign(self.hspd), y, Obj_Collidable) {
     var wall = instance_place(x + sign(self.hspd), y, Obj_Collidable);
     if self.hspd > 0 { //right
-        x = (wall.bbox_left-1) - sprite_bbox_right;
+        x = (wall.bbox_left-2) - sprite_bbox_right;
 		self.collideRight = true;
     } else if self.hspd < 0 { //left
         x = (wall.bbox_right+2) - sprite_bbox_left;
@@ -22,7 +25,7 @@ if place_meeting(x + sign(self.hspd), y, Obj_Collidable) {
 	self.collideLeft = false;
 }
 
-y += self.vspd;
+y += self.vspd * (delta_time / 100000);
 
 if place_meeting(x, y + sign(self.vspd), Obj_Collidable) {
     var wall = instance_place(x, y + sign(self.vspd), Obj_Collidable);
