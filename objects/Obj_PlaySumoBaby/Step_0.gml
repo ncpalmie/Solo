@@ -7,7 +7,15 @@ if self.numJumps < 3 {
 event_inherited();
 
 //Abilities
-scr_ability_slam();
+
+//Slam
+if (keyboard_check(ord("1")) and self.collideBottom == false) {
+	self.currentAbility = "slam"
+}
+
+if (self.currentAbility == "slam") {
+	self.vspd += 0.5;	
+}
 
 //Animation
 if hspd == 0 and vspd == 0 {
@@ -38,28 +46,21 @@ else {
 			self.maxFrame = 5;
 		}
 		//Lean in jump
-		if (image_xscale > 0 && !self.collideBottom) {
-				self.spriteAngle = 360 + (1.6 * self.hspd * -1);
-			} else {
-				self.spriteAngle = 1.6 * -1 * self.hspd;
+		if (self.currentAbility != "slam") {
+			if (image_xscale > 0 and !self.collideBottom) {
+					self.spriteAngle = 360 + (1.6 * self.hspd * -1);
+				} else {
+					self.spriteAngle = 1.6 * -1 * self.hspd;
+			}
 		}
 	}
 }
 
 if (self.currentAbility = "slam") {
-	if (self.hspd == 0) {
-		self.spriteAngle = 270;	
-		if (self.vspd < 0) {
-			image_xscale = 1;	
-			self.spriteAngle = 90;
-		}
-	}
-	else if (self.hspd > 0) {
-		image_xscale = 1;
-		self.spriteAngle = 270;
-	} else {
-		image_xscale = -1;
-		self.spriteAngle = 90;	
+	if (image_xscale == 1 and (self.spriteAngle < 268 or self.spriteAngle > 271)) {
+		self.spriteAngle -= 5;
+	} else if (self.spriteAngle < 88 or self.spriteAngle > 91) {
+		self.spriteAngle += 5;
 	}
 }
 
@@ -68,6 +69,11 @@ if (self.collideBottom or self.collideRight or self.collideLeft) {
 	self.spriteAngle = 0;
 	if (self.currentAbility == "slam") {
 		self.currentAbility = noone;
+		var numParticles;
+		for (numParticles = irandom(6) + 6; numParticles > 0; numParticles--) {
+			instance_create_depth(x + irandom_range(-6, 6), y + 6, depth - 1, Obj_ParticleDirt)
+		}
+		self.hspd = self.hspd / 2;
 	}
 }
 

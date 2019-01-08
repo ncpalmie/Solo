@@ -1,0 +1,10 @@
+self.spinDir = irandom(1);
+self.spriteAngle = 0;
+self.spinSpeed = random(1) + 1;
+self.hspd = 0;
+self.vspd = 0;
+self.moveSpeed = random(0.2) + 0.2;
+self.timeAlive = irandom(10) + 20;
+self.currTimeAlive = 0;
+self.random_x = irandom_range(-45, 45) + x;
+self.random_y = irandom_range(-15, 0) + y;
