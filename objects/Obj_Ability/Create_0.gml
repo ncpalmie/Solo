@@ -1,0 +1,1 @@
+self.abilityNum = 0;

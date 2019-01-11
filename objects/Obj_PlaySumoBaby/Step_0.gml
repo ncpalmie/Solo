@@ -18,35 +18,35 @@ if (self.currentAbility == "slam") {
 }
 
 //Animation
-if hspd == 0 and vspd == 0 {
-	image_speed = 2.5;
-	self.minFrame = 0;
-	self.maxFrame = 2;
-}
-else {
-	//Look Right
-	if keyboard_check(ord("D")) {
-		image_xscale = 1;	
-		image_speed = 8;
-		self.minFrame = 2;
-		self.maxFrame = 4;
-	//Look Left
-	} else if keyboard_check(ord("A")){
-		image_xscale = -1;
-		image_speed = 8;
-		self.minFrame = 2;
-		self.maxFrame = 4;
+if (self.currentAbility == noone) {
+	if hspd == 0 and vspd == 0 {
+		self.animationSpeed = 2.2;
+		self.minFrame = 0;
+		self.maxFrame = 2;
 	}
-	//Jump animations
-	if (vspd != 0) {
-		//Reach for sky
-		if (vspd < 0) {
-			image_speed = 0
-			self.minFrame = 4;
-			self.maxFrame = 5;
+	else {
+		//Look Right
+		if keyboard_check(ord("D")) {
+			image_xscale = 1;	
+			self.animationSpeed = 3.5;
+			self.minFrame = 2;
+			self.maxFrame = 4;
+		//Look Left
+		} else if keyboard_check(ord("A")){
+			image_xscale = -1;
+			self.animationSpeed = 3.5;
+			self.minFrame = 2;
+			self.maxFrame = 4;
 		}
-		//Lean in jump
-		if (self.currentAbility != "slam") {
+		//Jump animations
+		if (vspd != 0) {
+			//Reach for sky
+			if (vspd < 0) {
+				image_speed = 0
+				self.minFrame = 4;
+				self.maxFrame = 5;
+			}
+			//Lean in jump
 			if (image_xscale > 0 and !self.collideBottom) {
 					self.spriteAngle = 360 + (1.6 * self.hspd * -1);
 				} else {
@@ -77,6 +77,13 @@ if (self.collideBottom or self.collideRight or self.collideLeft) {
 	}
 }
 
-if (image_index >= self.maxFrame) or (image_index <= self.minFrame) {
-	image_index = self.minFrame;	
+if (self.animationProgress >= 144) {
+	self.currentFrame += 1;	
+	self.animationProgress = 0;
+} else {
+	self.animationProgress += self.animationSpeed + (delta_time / 100000);	
+}
+
+if (self.currentFrame >= self.maxFrame) or (self.currentFrame <= self.minFrame) {
+	self.currentFrame = self.minFrame;	
 }
