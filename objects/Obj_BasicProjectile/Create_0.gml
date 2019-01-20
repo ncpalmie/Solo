@@ -1,0 +1,11 @@
+self.damageValue = 0;
+self.dropoffRange = 0;
+self.dropoffSpeed = 0;
+self.damageIncreaseRange = 0;
+self.damageIncreaseSpeed = 0;
+self.hspd = 0;
+self.vspd = 0;
+self.collideBottom = false;
+self.spinSpeed = 2.5;
+self.spriteAngle = 0;
+self.instanceFrom = noone;

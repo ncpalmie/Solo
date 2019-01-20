@@ -8,6 +8,23 @@ event_inherited();
 
 //Abilities
 
+//Basic shot
+if (mouse_check_button(mb_left) and (global.frameClock - self.previousActionClock) > 250) {
+	var shotInstance;
+	shotInstance = instance_create_depth(x - 3, y - 5, -10, Obj_BasicProjectile);
+	shotInstance.sprite_index = Spr_BabyBottle;
+	shotInstance.hspd = self.hspd + ((self.playerPointer.x - self.x) * 2);
+	shotInstance.vspd = self.vspd + ((self.playerPointer.y - self.y) * 2);
+	if (shotInstance.vspd < 0) {
+		shotInstance.vspd -= 12;	
+	}
+	shotInstance.image_xscale = 0.5;
+	shotInstance.image_yscale = 0.5;
+	shotInstance.fromPlayer = self;
+	shotInstance.damageValue = 25;
+	self.previousActionClock = global.frameClock;
+}
+
 //Slam
 if (keyboard_check(ord("1")) and self.collideBottom == false) {
 	self.currentAbility = "slam"

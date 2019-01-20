@@ -1,12 +1,10 @@
 var player;
 
 //Differentiation of AI Player from Real Player for testing purposes
-{
-do
-{
-	player = instance_nearest(x, y, Obj_Player);
+player = instance_nearest(x, y, Obj_Player);
+if (player.AIPlayer) {
+	instance_destroy();	
 }
-until (player.AIPlayer == 0) }
 
 image_xscale = 0.65;
 image_yscale = 0.65;

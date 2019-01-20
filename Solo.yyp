@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "1ae0f4da-c8e4-4988-ad44-5abe2cc39fa7",
+            "Value": {
+                "id": "b54c081c-5c62-4663-bda7-106b390e0615",
+                "resourcePath": "objects\\Obj_DamageMarker\\Obj_DamageMarker.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1b485478-34cd-4395-938e-f9bb32a43c83",
             "Value": {
                 "id": "663248c5-9217-4436-99e9-3ae0a47fee8b",
@@ -100,6 +108,14 @@
                 "id": "56c588ec-2b90-40c9-814e-1e1c5b832b1c",
                 "resourcePath": "objects\\Obj_Collidable\\Obj_Collidable.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2bb12d52-0e82-4ac4-acc6-17df31c8c7ac",
+            "Value": {
+                "id": "8e356ebe-3558-4ba9-8041-f4ab37ecfa4f",
+                "resourcePath": "sprites\\Spr_BabyBottle\\Spr_BabyBottle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -175,6 +191,14 @@
             }
         },
         {
+            "Key": "5982e180-55b1-4e84-8800-fe349a2bd881",
+            "Value": {
+                "id": "73cb96fb-e22c-4d4f-ad2c-1615f50d4a52",
+                "resourcePath": "objects\\Obj_BasicProjectile\\Obj_BasicProjectile.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5a61e9ee-cedf-4b62-9546-972ffc3add3e",
             "Value": {
                 "id": "030e616e-9bbb-40b4-9533-cd7d5c4522a7",
@@ -207,11 +231,27 @@
             }
         },
         {
+            "Key": "6b6e6b4b-8e0e-451b-a4a4-6bc3a204b87e",
+            "Value": {
+                "id": "e1cee2a7-d9c8-4bae-b57b-f13d181b0dcf",
+                "resourcePath": "objects\\Obj_PlayDummy\\Obj_PlayDummy.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "720d47ab-0e95-489c-9594-4bab40ac72e4",
             "Value": {
                 "id": "65b6899c-902c-4e0b-862a-ee4dc3307680",
                 "resourcePath": "objects\\Obj_ParticleDirt\\Obj_ParticleDirt.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "72fdb7ce-3058-42f5-b7d5-76498faf2bac",
+            "Value": {
+                "id": "82f08c4f-197b-48ed-b12a-e64e29739c43",
+                "resourcePath": "sprites\\Spr_Dummy\\Spr_Dummy.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

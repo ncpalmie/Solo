@@ -6,5 +6,6 @@ draw_text(10, 70, "Current Frame: " + string(self.currentFrame));
 draw_text(10, 85, "CurrentAbility: " + string(self.currentAbility));
 draw_text(10, 100, "Image XScale: " + string(image_xscale));
 draw_text(10, 115, "Animation Progress: " + string(self.animationProgress));
+draw_text(10, 130, "Frame Clock: " + string(global.frameClock));
 draw_sprite_ext(sprite_index, self.currentFrame, x, y, image_xscale, image_yscale, 
 	self.spriteAngle, image_blend, image_alpha);
